@@ -26,8 +26,13 @@ incrementor.toString = () => {
 	return counter;
 	}
 
+var asyncCount = 0;
+const asyncIncrementor = async () => {
+		 asyncCount++;
+	return asyncCount;
+};
 
-const asyncIncrementor = () => {};
+
 const createIncrementer = {}
 
 // return same argument not earlier than in one second, and not later, than in two
