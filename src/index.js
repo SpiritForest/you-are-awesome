@@ -33,11 +33,24 @@ const asyncIncrementor = async () => {
 };
 
 
-const createIncrementer = {}
+const createIncrementer = () => { 
+return function* () { 
+let value = 0; 
+for (;;) { 
+value++; 
+yield value; 
+} 
+}(); 
+
+}
 
 // return same argument not earlier than in one second, and not later, than in two
-const returnBackInSecond = (param) => {};
-const getDeepPropertiesCount = () => {};
+const returnBackInSecond = (param) => {
+
+};
+const getDeepPropertiesCount = () => {
+return (setTimeout())
+};
 const createSerializedObject = () => {};
 const toBuffer = () => {};
 const sortByProto = (arr) => {
