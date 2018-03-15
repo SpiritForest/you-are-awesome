@@ -4,14 +4,29 @@ const createEnumerableProperty = (propertyName) => {
 	this.name = propertyName;
 	return this.name;
 };
+
 const createNotEnumerableProperty = (propertyName) => {
 	this.property = propertyName;
 	return Symbol(this.property);
 };
-const createProtoMagicObject = () => {};
-const incrementor = () => {
-	
+
+const createProtoMagicObject = () => {
+	var magic = 3;
+	var magicObj = {};
+	magic.__proto__ = magicObj;
+	return magic;
 };
+
+var counter = 0;
+const incrementor = () => {
+		counter++;
+	return incrementor;
+};
+incrementor.toString = () => {
+	return counter;
+	}
+
+
 const asyncIncrementor = () => {};
 const createIncrementer = {}
 

@@ -1,14 +1,14 @@
-var one = {
-  first: "first-val"
-  third: "three-val",
-  four: "four-val"
+const incrementor = () => {
+	var counter = 1;
+
+	function count(){
+		counter++;
+		return count;
+	}
+	toString = function(){
+		return counter;
+	}
+	return count;
 };
 
-var two = {
-  second: "second object"
-};
-
-two.__proto__ = one;
-
-two.first = "third object";
-alert('dd');
+alert(incrementor()()()());
