@@ -11,10 +11,6 @@ const createNotEnumerableProperty = (propertyName) => {
 };
 
 const createProtoMagicObject = () => {
-	var magic = 3;
-	var magicObj = {};
-	magic.__proto__ = magicObj;
-	return magic;
 };
 
 var counter = 0;
@@ -33,21 +29,25 @@ const asyncIncrementor = async () => {
 };
 
 
-const createIncrementer = () => { 
-return function* () { 
-let value = 0; 
-for (;;) { 
-value++; 
-yield value; 
-} 
-}(); 
+const createIncrementer = () => {
+return function* () {
+let value = 0;
+for (;;) {
+value++;
+yield value;
+}
+}();
 
 }
 
 // return same argument not earlier than in one second, and not later, than in two
+var item = 1;
 const returnBackInSecond = (param) => {
-
+return new Promise((resolve, reject) => {
+	setTimeout(()=>resolve(param), 1000);
+});
 };
+
 const getDeepPropertiesCount = () => {
 return (setTimeout())
 };
