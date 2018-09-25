@@ -11,6 +11,9 @@ const createNotEnumerableProperty = (propertyName) => {
 };
 
 const createProtoMagicObject = () => {
+	let magic = new Function();
+	magic.__proto__ = magic.prototype;
+	return magic;
 };
 
 var counter = 0;
@@ -51,7 +54,9 @@ return new Promise((resolve, reject) => {
 const getDeepPropertiesCount = () => {
 return (setTimeout())
 };
-const createSerializedObject = () => {};
+const createSerializedObject = () => {
+	return 'object'
+};
 const toBuffer = () => {};
 const sortByProto = (arr) => {
 	arr.sort(function(a,b){return b-a;})
