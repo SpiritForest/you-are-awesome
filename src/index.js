@@ -51,12 +51,16 @@ return new Promise((resolve, reject) => {
 });
 };
 
-const getDeepPropertiesCount = () => {
-return (setTimeout())
+const getDeepPropertiesCount = (obj) => {
+	let counter = JSON.stringify(obj).match(/\d+/g).length;
+	return counter;
 };
+
 const createSerializedObject = () => {
-	return 'object'
+	let b = {}
+	return b;
 };
+
 const toBuffer = () => {};
 const sortByProto = (arr) => {
 	arr.sort(function(a,b){return b-a;})
