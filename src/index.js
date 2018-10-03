@@ -58,7 +58,7 @@ const getDeepPropertiesCount = (obj) => {
 
 const createSerializedObject = () => {
 	let b = {}
-	return b;
+	return new String(b);
 };
 
 const toBuffer = () => {};
